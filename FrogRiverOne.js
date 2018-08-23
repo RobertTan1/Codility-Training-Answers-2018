@@ -1,8 +1,9 @@
 function solution(X, A) {
-    
-    for (var i in A) {
-        if (Array.from(new Set(A.slice(0,i+1))).length === X) {
-            return parseInt(i-1)
+    counter = [1].concat(new Array(X).fill(0))
+    for (var i = 0; i< A.length; i++) {
+        counter[A[i]]++
+        if (counter.indexOf(0) == -1) {
+            return i
         }
     }
     return -1
