@@ -1,22 +1,9 @@
-// Slow solution - O(N^2)
+// Slow solution - O(N^2), without doing bitwise comparison bullshit
 
 function solution(A) {
-    var unique = Array.from(new Set (A))
-    for (var i in unique) {
-
-        var indexes = []
-        
-        for (var j in A) {
-            
-            if (unique[i] == A[j]) {
-                indexes.push(j)
-            }
-            
-        }
-        
-        if ((indexes.length % 2) == 1) {
-            return(A[indexes[0]])
-        }
-        
+    counts = Array(Math.max.apply(Math,A)+1).fill(false)
+    for (var i in A) {
+        counts[A[i]] = !counts[A[i]]
     }
+    return counts.indexOf(true)
 }
