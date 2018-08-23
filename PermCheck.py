@@ -4,8 +4,8 @@ def solution(A):
     else:
         return 0
 
-// For some reason the javascript version gives only 75% score while being conceptually the same
-
+# For some reason the javascript version gives only 75% score while being conceptually the same
+""""
 function solution(A) {
     trueLen = Array.from(new Set(A)).length + 1
     if (JSON.stringify(Array.from(new Set(A)).sort()) === JSON.stringify([...Array(trueLen).keys()].slice(1))) {
@@ -13,3 +13,4 @@ function solution(A) {
     }
     return 0
 }
+""""
