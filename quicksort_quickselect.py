@@ -1,6 +1,10 @@
+import random
+
 def partition(A, start, end):
     edge = pointer = start
-    
+    pivot = random.randint(start, end)
+    A[end], A[pivot] = A[pivot], A[end]
+
     while pointer < end:
         if A[end] > A[pointer]:
             A[edge], A[pointer] = A[pointer], A[edge]
